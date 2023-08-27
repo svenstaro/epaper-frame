@@ -1,0 +1,7 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+nvs,      data, nvs,     ,          0x4000,
+otadata,  data, ota,     ,          0x2000,
+phy_init, data, phy,     ,          0x1000,
+# At a 0x10000 (64 KB) offset in the flash is the app labelled “factory”.
+# The bootloader will run this app by default.
+factory,  app,  factory, 0x10000,   2500K,

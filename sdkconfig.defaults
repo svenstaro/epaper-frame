@@ -1,0 +1,28 @@
+# Rust often needs a bit of an extra main task stack size compared to C (the default is 3K)
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
+
+# Optionally turn this on for debugging.
+#CONFIG_LOG_DEFAULT_LEVEL_VERBOSE=y  # trace-level
+#CONFIG_LOG_DEFAULT_LEVEL_DEBUG=y    # debug-level
+
+# Use this to set FreeRTOS kernel tick frequency to 1000 Hz (100 Hz by default).
+# This allows to use 1 ms granuality for thread sleeps (10 ms by default).
+CONFIG_FREERTOS_HZ=1000
+
+# Set CPU frequency to the maximum frequency of 240MHz
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+CONFIG_ESP_TASK_WDT_EN=n
+
+# Configure PSRAM
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+
+# Use custom partition table
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+# CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+# CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
