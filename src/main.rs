@@ -7,10 +7,11 @@ use esp_idf_hal::gpio::{self, PinDriver};
 use esp_idf_hal::peripherals::Peripherals;
 use esp_idf_hal::prelude::*;
 use esp_idf_hal::spi::{SpiConfig, SpiDeviceDriver, SpiDriverConfig, SpiError};
-use esp_idf_sys::{self as _, EspError};
+use esp_idf_sys::EspError;
+// If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
+use esp_idf_sys as _;
 use image::imageops::{dither, ColorMap};
 use image::Rgb;
-// If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
 use log::*;
 use thiserror::Error;
 
